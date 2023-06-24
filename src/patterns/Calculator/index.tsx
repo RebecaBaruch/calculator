@@ -8,24 +8,24 @@ import ClearButton from '../../components/ClearButton'
 import { useState, useRef } from 'react'
 
 export default function Calculator(){
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState<string>('');
+    const [resultValue, setResultValue] = useState<number | string>('');
 
     const inputRef = useRef<HTMLInputElement>(null);
     const resultAreaRef = useRef<HTMLDivElement>(null);
 
+    const inputScreen = inputRef.current;
+    const resultScreen = resultAreaRef.current
+
     const inputEquation = () => {
-        if(inputRef.current) {
-            setInputValue(inputRef.current.value)
-            console.log(inputRef.current.value)
-        }
+        if(inputScreen) setInputValue(inputScreen.value);
     }
 
-    // clear the sreen
+    // clear the screen
     const clearAll = () => {
-        setInputValue('');
-        if(inputRef.current && 
-           resultAreaRef.current
-        ){
+        if(inputScreen && resultScreen){
+            setInputValue('');
+            setResultValue('');
             inputRef.current.value = '';
             resultAreaRef.current.textContent = '';
         }
@@ -33,27 +33,26 @@ export default function Calculator(){
 
     // clear only the result
     const clearResult = () => {
-        if(resultAreaRef.current) resultAreaRef.current.textContent = '';;
+        setResultValue('')
+        if(resultScreen) resultScreen.textContent = String(resultValue);
     }
 
     //attr value to the equation
     const equationAttr = (
         event: React.MouseEvent<HTMLButtonElement | HTMLInputElement, MouseEvent>
     ) => {
-
         const buttonInput = event.currentTarget.querySelector('input[type="hidden"]');
 
-        if(buttonInput) {
-            const operator = (buttonInput as HTMLInputElement).value;
-
-            if(inputRef.current) {
+        if(inputScreen){
+            if(buttonInput) {
+                const operator = (buttonInput as HTMLInputElement).value;
                 inputRef.current.value += operator;
-            }
-        }else{
-            if(inputRef.current) {
-                const equationValue = event.currentTarget.value;
-                inputRef.current.value += equationValue;
-                setInputValue(inputRef.current.value);
+            }else{
+                if(inputScreen) {
+                    const equationValue = event.currentTarget.value;
+                    inputRef.current.value += equationValue;
+                    setInputValue(inputRef.current.value);
+                }
             }
         }
     }
@@ -61,9 +60,7 @@ export default function Calculator(){
     //show the equation result
     const showResult = () => {
         const result = eval(inputValue);
-
-        if(resultAreaRef.current) resultAreaRef.current.textContent = result;
-        console.log(result);
+        if(resultScreen) resultAreaRef.current.textContent = result;
     }
 
     return(
@@ -127,7 +124,6 @@ export default function Calculator(){
                         </OperatorButton>
                     </Column>
                 </Row>
-
 
                 {/* Equal button */}
                 <Row>
