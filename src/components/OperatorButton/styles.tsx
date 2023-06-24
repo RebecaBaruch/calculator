@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Button = styled.input`
+export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,4 +20,11 @@ export const Button = styled.input`
 
     cursor: pointer;
 
+`
+
+export const OperatorInput = styled.input`
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    background-color: transparent;
 `

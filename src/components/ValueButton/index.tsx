@@ -1,3 +1,4 @@
+import { type } from "os";
 import { Button } from "./styles";
 
 interface ValueProps{
@@ -8,6 +9,11 @@ interface ValueProps{
 
 export default function ValueButton({fullWidth, value, onClick}: ValueProps){
     return(
-        <Button fullWidth={fullWidth} value={value} onClick={onClick}/>
+        <Button 
+            fullWidth={fullWidth} 
+            type='button'
+            value={value} 
+            onClick={onClick}
+        />
     )
 }

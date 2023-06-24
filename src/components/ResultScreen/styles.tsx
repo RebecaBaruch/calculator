@@ -25,6 +25,7 @@ export const ValuesInput = styled.input`
 `
 
 export const ResultArea = styled.div`
+    width: 100%;
     text-align: right;
     font-size: 43px;
     font-weight: 700;
