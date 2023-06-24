@@ -103,7 +103,7 @@ export default function Calculator(){
                         </Row>
 
                         <Row>
-                            <ValueButton fullWidth value='0' onClick={equationAttr}/>
+                            <ValueButton fullWidth={true} value='0' onClick={equationAttr}/>
                             <ValueButton value='.' onClick={equationAttr}/>
                         </Row>
                     </Column>

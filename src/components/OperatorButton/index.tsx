@@ -1,13 +1,6 @@
-import { ReactNode, MouseEventHandler } from 'react';
 import { Button, OperatorInput } from "./styles";
 
-
-interface OperatorProps{
-    name?: string;
-    value: string;
-    children?: ReactNode;
-    onClick: React.MouseEventHandler<HTMLElement>;
-}
+import { OperatorProps } from "../../interfaces/CalculatorProps";
 
 export default function OperatorButton({name, value, children, onClick}: OperatorProps): JSX.Element{
     return(

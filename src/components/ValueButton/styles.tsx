@@ -2,7 +2,7 @@ import { InputHTMLAttributes } from 'react';
 import { styled } from 'styled-components';
 
 interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
-    fullWidth?: boolean;
+    fullWidth?: boolean | undefined;
 }
   
 

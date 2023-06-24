@@ -1,11 +1,6 @@
-import { type } from "os";
 import { Button } from "./styles";
 
-interface ValueProps{
-    fullWidth?: boolean;
-    value: string;
-    onClick: React.MouseEventHandler<HTMLElement>;
-}
+import { ValueProps } from "../../interfaces/CalculatorProps";
 
 export default function ValueButton({fullWidth, value, onClick}: ValueProps){
     return(
