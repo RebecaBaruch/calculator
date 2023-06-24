@@ -15,16 +15,13 @@ export default function Calculator(){
     const inputRef = useRef<HTMLInputElement>(null);
     const resultAreaRef = useRef<HTMLDivElement>(null);
 
-    const inputScreen = inputRef.current;
-    const resultScreen = resultAreaRef.current;
-
     const inputEquation = () => {
-        if(inputScreen) setInputValue(inputScreen.value);
+        if(inputRef.current) setInputValue(inputRef.current.value);
     }
 
     // clear the screen
     const clearAll = () => {
-        if(inputScreen && resultScreen){
+        if(inputRef.current && resultAreaRef.current){
             setInputValue('');
             setResultValue('');
             inputRef.current.value = '';
@@ -35,7 +32,7 @@ export default function Calculator(){
     // clear only the result
     const clearResult = () => {
         setResultValue('')
-        if(resultScreen) resultScreen.textContent = String(resultValue);
+        if(resultAreaRef.current) resultAreaRef.current.textContent = String(resultValue);
     }
 
     //attr value to the equation
@@ -44,16 +41,14 @@ export default function Calculator(){
     ) => {
         const buttonInput = event.currentTarget.querySelector('input[type="hidden"]');
 
-        if(inputScreen){
+        if(inputRef.current){
             if(buttonInput) {
                 const operator = (buttonInput as HTMLInputElement).value;
                 inputRef.current.value += operator;
             }else{
-                if(inputScreen) {
-                    const equationValue = event.currentTarget.value;
-                    inputRef.current.value += equationValue;
-                    setInputValue(inputRef.current.value);
-                }
+                const equationValue = event.currentTarget.value;
+                inputRef.current.value += equationValue;
+                setInputValue(inputRef.current.value);
             }
         }
     }
@@ -61,7 +56,7 @@ export default function Calculator(){
     //show the equation result
     const showResult = () => {
         const result = eval(inputValue);
-        if(resultScreen) resultAreaRef.current.textContent = result;
+        if(resultAreaRef.current) resultAreaRef.current.textContent = result;
     }
 
     return(
