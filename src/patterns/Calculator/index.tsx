@@ -4,6 +4,7 @@ import OperatorButton from '../../components/OperatorButton'
 import ValueButton from '../../components/ValueButton'
 import EqualButton from '../../components/EqualButton'
 import ResultScreen from '../../components/ResultScreen'
+import ClearButton from '../../components/ClearButton'
 
 export default function Calculator(){
 
@@ -30,6 +31,15 @@ export default function Calculator(){
             </ResultScreen>
 
             <ButtonsContainer>
+                <Row>
+                    <ClearButton type='button' clearType='ce'>
+                        CE
+                    </ClearButton>
+
+                    <ClearButton type='button' clearType='c'>
+                        C
+                    </ClearButton>
+                </Row>
                 <Row>
                     {/* Value buttons */}
 

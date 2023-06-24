@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 
 interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
     fullWidth?: boolean;
-  }
+}
   
 
 export const Button = styled.input<ButtonProps>`
