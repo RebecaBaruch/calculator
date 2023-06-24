@@ -38,3 +38,7 @@ export interface TextProps{
     children?: ReactNode;
     title?: ReactNode;
 }
+
+export interface MyLinkProps extends TextProps{
+    href: string;
+}
