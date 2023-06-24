@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from "react";
 import styled from 'styled-components';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    clearType: "ce" | "c";
+    cleartype: "ce" | "c";
 }
 
 export const Button = styled.button<ButtonProps>`
@@ -12,7 +12,7 @@ export const Button = styled.button<ButtonProps>`
 
     border: none;
     border-radius: 13px;
-    color: ${props => (props.clearType == 'ce' ? '#fb4300' : '#ffb703')};
+    color: ${props => (props.cleartype == 'ce' ? '#fb4300' : '#ffb703')};
     font-size: 23px;
     font-weight: 700;
     background-color: #F0F0F3;

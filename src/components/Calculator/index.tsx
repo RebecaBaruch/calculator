@@ -1,11 +1,12 @@
-import { ButtonsContainer, CalculatorContainer, Column, Row } from './styles'
+import { useState, useRef } from 'react';
 
-import OperatorButton from '../../components/OperatorButton'
-import ValueButton from '../../components/ValueButton'
-import EqualButton from '../../components/EqualButton'
-import ResultScreen from '../../components/ResultScreen'
-import ClearButton from '../../components/ClearButton'
-import { useState, useRef } from 'react'
+import { ButtonsContainer, CalculatorContainer, Column, Row } from './styles';
+
+import OperatorButton from '../../components/Calculator/OperatorButton';
+import ValueButton from '../../components/Calculator/ValueButton';
+import EqualButton from '../../components/Calculator/EqualButton';
+import ResultScreen from '../../components/Calculator/ResultScreen';
+import ClearButton from '../../components/Calculator/ClearButton';
 
 export default function Calculator(){
     const [inputValue, setInputValue] = useState<string>('');
@@ -15,7 +16,7 @@ export default function Calculator(){
     const resultAreaRef = useRef<HTMLDivElement>(null);
 
     const inputScreen = inputRef.current;
-    const resultScreen = resultAreaRef.current
+    const resultScreen = resultAreaRef.current;
 
     const inputEquation = () => {
         if(inputScreen) setInputValue(inputScreen.value);
@@ -74,11 +75,11 @@ export default function Calculator(){
 
             <ButtonsContainer>
                 <Row>
-                    <ClearButton type='button' clearType='ce' onClick={clearAll}>
+                    <ClearButton type='button' cleartype='ce' onClick={clearAll}>
                         CE
                     </ClearButton>
 
-                    <ClearButton type='button' clearType='c' onClick={clearResult}>
+                    <ClearButton type='button' cleartype='c' onClick={clearResult}>
                         C
                     </ClearButton>
                 </Row>
@@ -103,7 +104,7 @@ export default function Calculator(){
                         </Row>
 
                         <Row>
-                            <ValueButton fullWidth={true} value='0' onClick={equationAttr}/>
+                            <ValueButton fullwidth={true} value='0' onClick={equationAttr}/>
                             <ValueButton value='.' onClick={equationAttr}/>
                         </Row>
                     </Column>

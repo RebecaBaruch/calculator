@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle<{}>`
         display: flex;
         justify-content: center;
         flex-direction: row;
-        align-items: start;
+        gap: 133px;
+        align-items: center;
         padding: 80px;
         width: 100vw;
         height: 100vh;

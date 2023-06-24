@@ -2,12 +2,12 @@ import { InputHTMLAttributes } from 'react';
 import { styled } from 'styled-components';
 
 interface ButtonProps extends InputHTMLAttributes<HTMLInputElement> {
-    fullWidth?: boolean | undefined;
+    fullwidth?: boolean | undefined;
 }
   
 
 export const Button = styled.input<ButtonProps>`
-    width: ${props => (props.fullWidth ? '100%' : '43px') };
+    width: ${props => (props.fullwidth ? '100%' : '43px') };
     height: 43px;
     
     outline: none;

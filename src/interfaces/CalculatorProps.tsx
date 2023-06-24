@@ -9,7 +9,7 @@ export interface ScreenProps {
 }
 
 export interface ValueProps{
-    fullWidth?: boolean;
+    fullwidth?: boolean;
     value: string;
     onClick: React.MouseEventHandler<HTMLElement>;
 }
@@ -29,7 +29,12 @@ export interface EqualProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export interface ClearProps{
     type?: "button";
-    clearType: "ce" | "c";
+    cleartype: "ce" | "c";
     children: ReactNode;
     onClick: React.MouseEventHandler<HTMLElement>;
+}
+
+export interface TextProps{
+    children?: ReactNode;
+    title?: ReactNode;
 }

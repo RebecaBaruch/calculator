@@ -1,6 +1,6 @@
 import { Button, OperatorInput } from "./styles";
 
-import { OperatorProps } from "../../interfaces/CalculatorProps";
+import { OperatorProps } from "../../../interfaces/CalculatorProps";
 
 export default function OperatorButton({name, value, children, onClick}: OperatorProps): JSX.Element{
     return(
