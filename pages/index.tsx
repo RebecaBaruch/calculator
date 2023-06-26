@@ -9,9 +9,9 @@ const Home: NextPage = () => {
       <TextContainer 
         title={'Calculator in React, Next JS and TS 🚀💻'
       }>
-        <p>
-          Experience the power of React JS, Next JS, and TS. Build scalable and performant web applications with ease. Enjoy seamless integration, robust development tools, and type safety. Embrace the future of web development.
-        </p>
+        
+        Experience the power of React JS, Next JS, and TS. Build scalable and performant web applications with ease. Enjoy seamless integration, robust development tools, and type safety. Embrace the future of web development.
+        
 
         <Link href='/FetchResult'>
           Fetch test page 🎯
@@ -23,4 +23,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Home;
