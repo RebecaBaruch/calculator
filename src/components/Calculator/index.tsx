@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 
 import { ButtonsContainer, CalculatorContainer, Column, Row } from './styles';
 
@@ -7,6 +8,7 @@ import ValueButton from '../../components/Calculator/ValueButton';
 import EqualButton from '../../components/Calculator/EqualButton';
 import ResultScreen from '../../components/Calculator/ResultScreen';
 import ClearButton from '../../components/Calculator/ClearButton';
+import BackspaceButton from './BackspaceButton';
 
 export default function Calculator(){
     const [inputValue, setInputValue] = useState<string>('');
@@ -33,6 +35,15 @@ export default function Calculator(){
     const clearResult = () => {
         setResultValue('')
         if(resultAreaRef.current) resultAreaRef.current.textContent = String(resultValue);
+    }
+
+    //backspace function
+    const backspaceClear = () => {
+        const eqStr = inputValue;
+        const cldStr = eqStr.slice(0, -1);
+
+        setInputValue(cldStr);
+        if(inputRef.current) inputRef.current.value = cldStr;
     }
 
     //attr value to the equation
@@ -77,6 +88,8 @@ export default function Calculator(){
                     <ClearButton type='button' cleartype='c' onClick={clearResult}>
                         C
                     </ClearButton>
+
+                    <BackspaceButton onClick={backspaceClear} />
                 </Row>
                 <Row>
                     {/* Value buttons */}

@@ -42,3 +42,7 @@ export interface TextProps{
 export interface MyLinkProps extends TextProps{
     href: string;
 }
+
+export interface BackspaceProps{
+    onClick: React.MouseEventHandler<HTMLElement>;
+}

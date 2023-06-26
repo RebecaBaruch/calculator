@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Button= styled.button`
     width: 100%;
     height: 53px;
-    border-radius: 13px;
-    border: none;
+    
     outline: none;
-
+    border-radius: 7px;
+    border: none;
     text-align: center;
     font-family: 'Roboto', sans-serif;
     font-size: 33px;

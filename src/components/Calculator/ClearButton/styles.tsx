@@ -11,7 +11,7 @@ export const Button = styled.button<ButtonProps>`
     outline: none;
 
     border: none;
-    border-radius: 13px;
+    border-radius: 7px;
     color: ${props => (props.cleartype == 'ce' ? '#fb4300' : '#ffb703')};
     font-size: 23px;
     font-weight: 700;
