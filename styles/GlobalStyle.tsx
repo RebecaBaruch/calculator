@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle<{}>`
 
         padding: 80px;
         width: 100%;
-        height: fit-content;
         overflow-x: hidden;
         
         background-color: #08061c;
